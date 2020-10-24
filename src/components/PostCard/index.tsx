@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FiTag } from 'react-icons/fi';
+import { FiTag, FiEdit, FiTrash } from 'react-icons/fi';
+import Button from 'react-bootstrap/Button';
 
 import {
   Container,
@@ -8,6 +9,7 @@ import {
   Preview,
   Title,
   Info,
+  AdminButtons,
 } from './styles';
 
 interface Props {
@@ -18,10 +20,12 @@ interface Props {
   tags: string[];
   coverImgUrl: string;
   coverImgAlt: string;
+  showAdminButtons?: boolean;
 }
 
 const PostCard: React.FC<Props> = ({
   title, preview, date, readingTimeInMinutes, tags, coverImgUrl, coverImgAlt,
+  showAdminButtons = false,
 }) => (
   <Container>
     <NavLink to="openPost">
@@ -42,6 +46,20 @@ const PostCard: React.FC<Props> = ({
           {' '}
           {tags.map((tag) => `${tag} `)}
         </Info>
+
+        {showAdminButtons && (
+          <AdminButtons>
+            <Button>
+              <FiEdit />
+              Editar
+            </Button>
+
+            <Button>
+              <FiTrash />
+              Excluir
+            </Button>
+          </AdminButtons>
+        )}
       </div>
 
       <Cover>

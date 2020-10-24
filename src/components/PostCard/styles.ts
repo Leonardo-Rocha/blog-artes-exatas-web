@@ -61,9 +61,21 @@ const Cover = styled.div`
   }
 `;
 
+const AdminButtons = styled.div`
+  padding-top: 20px;
+
+  display: flex;
+  width: 100%;
+
+  button {
+    margin-right: 5px;
+  }
+`;
+
 export {
   Title,
   Preview,
   Cover,
   Info,
+  AdminButtons,
 };
