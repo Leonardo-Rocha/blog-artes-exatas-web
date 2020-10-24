@@ -1,29 +1,56 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { FiTag } from 'react-icons/fi';
 
 import {
   Container,
   Cover,
   Preview,
   Title,
+  Info,
 } from './styles';
 
-const PostCard: React.FC = () => (
-  <Container to="openPost">
-    <div>
-      <Title>COMO ESCOLHER AS PEÇAS DO SEU PC - O Guia Definitivo</Title>
+interface Props {
+  title: string;
+  preview: string;
+  date: string;
+  readingTimeInMinutes: number;
+  tags: string[];
+  coverImgUrl: string;
+  coverImgAlt: string;
+}
 
-      <Preview>
-        Esse vídeo tem o propósito ambicioso de ser um guia DEFINITIVO de como
-        escolher as peças para montar um computador dependendo do uso e aplicação.
-      </Preview>
-    </div>
+const PostCard: React.FC<Props> = ({
+  title, preview, date, readingTimeInMinutes, tags, coverImgUrl, coverImgAlt,
+}) => (
+  <Container>
+    <NavLink to="openPost">
+      <div>
+        <Title>{title}</Title>
 
-    <Cover>
-      <img
-        src="https://www.computerrepairssunnybank.com.au/wp-content/uploads/2016/11/custom-computer-build.jpg"
-        alt="Pessoas montando um computador."
-      />
-    </Cover>
+        <Preview>{preview}</Preview>
+
+        <Info>
+          {date}
+          {' '}
+          - Leitura de
+          {' '}
+          {readingTimeInMinutes}
+          min |
+          {' '}
+          <FiTag />
+          {' '}
+          {tags.map((tag) => `${tag} `)}
+        </Info>
+      </div>
+
+      <Cover>
+        <img
+          src={coverImgUrl}
+          alt={coverImgAlt}
+        />
+      </Cover>
+    </NavLink>
   </Container>
 );
 

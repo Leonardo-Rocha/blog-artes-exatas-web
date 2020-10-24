@@ -10,6 +10,10 @@ const Content = styled.main`
   align-items: center;
 
   padding: 4rem 1rem;
+
+  div + div {
+    margin-top: 32px;
+  }
 `;
 
 export { Content };
