@@ -16,6 +16,7 @@
     "bootstrap": "^4.5.3",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-react": "^7.20.0",
+    "html-react-parser": "^0.14.0",
     "polished": "^4.0.3",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",

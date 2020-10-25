@@ -6,9 +6,9 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 
 import { useHistory } from 'react-router-dom';
-import api from '../../services/api';
 import Header from '../../components/Header';
 import { Content } from './styles';
+import loadFullPost from '../../services/loadFullPost';
 
 interface Props {
   id?: number;
@@ -22,16 +22,9 @@ const CreatePost: React.FC<Props> = ({ id }) => {
   const [content, setContent] = useState('');
   const history = useHistory();
 
-  useEffect(() => {
-    async function loadPost() {
-      if (id) {
-        const data = await api.get(`/posts/${id}`);
-        console.log(data);
-      }
-    }
-
-    loadPost();
-  }, [id]);
+  // useEffect(() => {
+  //   loadFullPost();
+  // }, [id]);
 
   const handleSubmit = useCallback((event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

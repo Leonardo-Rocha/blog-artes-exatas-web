@@ -1,17 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 
 import Header from '../../components/Header';
 import PostCard from '../../components/PostCard';
+import Post from '../../interfaces/post';
 
 import { Content } from './styles';
 
-interface Post {
-
-}
-
 const LandingPage: React.FC = () => {
-  const [posts, setPosts] = useState<>();
+  const [posts, setPosts] = useState<Post>();
 
   return (
     <Container>
