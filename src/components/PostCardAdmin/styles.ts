@@ -17,9 +17,7 @@ export const Container = styled.div`
   transition: transform 0.2s;
 
   div {
-    margin: 0 16px;
-    flex: 1;
-
+    margin-right: 16px;
     max-height: 350px;
     max-width: 500px;
   }
@@ -44,15 +42,8 @@ const Preview = styled.p`
 
 const Info = styled.span`
   color: #a8a8b3;
-`;
-
-const Cover = styled.div`
-  img {
-    width: 100%;
-    height: 100%;
-
-    border-radius: 1%;
-  }
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const AdminButtons = styled.div`
@@ -61,15 +52,19 @@ const AdminButtons = styled.div`
   display: flex;
   width: 100%;
 
+  align-items: center;
+  justify-content: left;
+  margin-left: 0px;
+
   button {
     margin-right: 5px;
+    width: 48%;
   }
 `;
 
 export {
   Title,
   Preview,
-  Cover,
   Info,
   AdminButtons,
 };

@@ -4,11 +4,11 @@ import { FiTag } from 'react-icons/fi';
 
 import {
   Container,
-  Cover,
   Preview,
   Title,
   Info,
 } from './styles';
+import VideoCard from '../VideoCard';
 
 interface Props {
   title: string;
@@ -16,15 +16,14 @@ interface Props {
   date: string;
   readingTimeInMinutes: number;
   tags: string[];
-  coverImgUrl: string;
-  coverImgAlt: string;
+  url: string;
 }
 
 const PostCard: React.FC<Props> = ({
-  title, preview, date, readingTimeInMinutes, tags, coverImgUrl, coverImgAlt,
+  title, preview, date, readingTimeInMinutes, tags, url,
 }) => (
   <Container>
-    <NavLink to="openPost">
+    <NavLink to="openPost" id="cardLink">
       <div>
         <Title>{title}</Title>
 
@@ -44,12 +43,10 @@ const PostCard: React.FC<Props> = ({
         </Info>
       </div>
 
-      <Cover>
-        <img
-          src={coverImgUrl}
-          alt={coverImgAlt}
-        />
-      </Cover>
+      <VideoCard
+        videoTitle={title}
+        videoURL={url}
+      />
     </NavLink>
   </Container>
 );

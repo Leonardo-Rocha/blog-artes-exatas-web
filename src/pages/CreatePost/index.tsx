@@ -18,6 +18,7 @@ const CreatePost: React.FC<Props> = ({ id }) => {
   const [title, setTitle] = useState('');
   const [readingTimeInMinutes, setReadingTimeInMinutes] = useState('');
   const [tags, setTags] = useState('');
+  const [link, setLink] = useState('');
   const [content, setContent] = useState('');
   const history = useHistory();
 
@@ -69,17 +70,34 @@ const CreatePost: React.FC<Props> = ({ id }) => {
             </Col>
           </Form.Row>
 
-          <Form.Group controlId="tags">
-            <Form.Label>Tags</Form.Label>
-            <Form.Control
-              type="text"
-              value={tags}
-              onChange={(e) => setTags(e.target.value)}
-            />
-            <Form.Text className="text-muted">
-              Insira as tags separadas por vírgula.
-            </Form.Text>
-          </Form.Group>
+          <Form.Row>
+            <Col>
+              <Form.Group controlId="tags">
+                <Form.Label>Tags</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={tags}
+                  onChange={(e) => setTags(e.target.value)}
+                />
+                <Form.Text className="text-muted">
+                  Insira as tags separadas por vírgula.
+                </Form.Text>
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group controlId="link">
+                <Form.Label>Tags</Form.Label>
+                <Form.Control
+                  type="link"
+                  value={link}
+                  onChange={(e) => setLink(e.target.value)}
+                />
+                <Form.Text className="text-muted">
+                  Este campo é opcional.
+                </Form.Text>
+              </Form.Group>
+            </Col>
+          </Form.Row>
 
           <Editor
             apiKey={process.env.REACT_APP_TINYMCE_API_KEY}

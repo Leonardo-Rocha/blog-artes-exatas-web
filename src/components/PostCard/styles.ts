@@ -4,7 +4,7 @@ import { lighten } from 'polished';
 export const Container = styled.div`
   display: flex;
 
-  a {
+  #cardLink {
     text-decoration: none;
 
     background: ${lighten(0.05, '#343a40')};
@@ -22,9 +22,7 @@ export const Container = styled.div`
     }
 
     div {
-      margin: 0 16px;
-      flex: 1;
-
+      margin-right: 16px;
       max-height: 350px;
       max-width: 500px;
     }
@@ -50,32 +48,16 @@ const Preview = styled.p`
 
 const Info = styled.span`
   color: #a8a8b3;
-`;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-const Cover = styled.div`
-  img {
-    width: 100%;
-    height: 100%;
-
-    border-radius: 1%;
-  }
-`;
-
-const AdminButtons = styled.div`
-  padding-top: 20px;
-
-  display: flex;
-  width: 100%;
-
-  button {
-    margin-right: 5px;
-  }
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 `;
 
 export {
   Title,
   Preview,
-  Cover,
   Info,
-  AdminButtons,
 };

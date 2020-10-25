@@ -2,9 +2,9 @@ import React from 'react';
 import { FiTag, FiEdit, FiTrash } from 'react-icons/fi';
 import Button from 'react-bootstrap/Button';
 
+import VideoCard from '../VideoCard';
 import {
   Container,
-  Cover,
   Preview,
   Title,
   Info,
@@ -17,12 +17,11 @@ interface Props {
   date: string;
   readingTimeInMinutes: number;
   tags: string[];
-  coverImgUrl: string;
-  coverImgAlt: string;
+  url: string;
 }
 
 const PostCardAdmin: React.FC<Props> = ({
-  title, preview, date, readingTimeInMinutes, tags, coverImgUrl, coverImgAlt,
+  title, preview, date, readingTimeInMinutes, tags, url,
 }) => (
   <Container>
     <div>
@@ -56,12 +55,10 @@ const PostCardAdmin: React.FC<Props> = ({
       </AdminButtons>
     </div>
 
-    <Cover>
-      <img
-        src={coverImgUrl}
-        alt={coverImgAlt}
-      />
-    </Cover>
+    <VideoCard
+      videoTitle={title}
+      videoURL={url}
+    />
   </Container>
 );
 
