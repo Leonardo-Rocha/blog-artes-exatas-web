@@ -10,7 +10,7 @@ const Routes: React.FC = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact component={LandingPage} />
-      <Route path="/:id" component={PostPage} />
+      <Route path="/posts/:id" exact component={PostPage} />
       <Route path="/admin" exact component={AdminPage} />
       <Route path="/admin/create-post" component={CreatePost} />
     </Switch>
