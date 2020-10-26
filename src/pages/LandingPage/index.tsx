@@ -33,6 +33,18 @@ const LandingPage: React.FC = () => {
         tags={['#Humor', '#PiadasZap']}
         videoUrl="https://www.youtube.com/watch?v=WIpP5fvg9Jw"
       />
+
+      <PostCard
+        id={2}
+        title="ONDE O CARECA TERMINA DE LAVAR O ROSTO?"
+        preview="Muitas pessoas tem essa dúvida, porque geralmente se para de lavar
+          quando chega no cabelo. Como proceder quando não há cabelo?"
+        createdAt="25/10/2020"
+        updatedAt="25/10/2020"
+        readingTimeInMinutes={2}
+        tags={['#Humor', '#PiadasZap']}
+        videoUrl="https://www.youtube.com/watch?v=WIpP5fvg9Jw"
+      />
     </PageTemplate>
   );
 };

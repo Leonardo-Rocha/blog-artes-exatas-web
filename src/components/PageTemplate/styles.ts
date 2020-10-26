@@ -14,6 +14,7 @@ const Body = styled.div`
   section {
     flex: 1 1 auto;
     margin: 0 2rem;
+    height: 100%;
   }
 
   .sidebar-1 {

@@ -4,7 +4,7 @@ import { FiTag, FiEdit, FiTrash } from 'react-icons/fi';
 import Button from 'react-bootstrap/Button';
 
 import PreviewPost from '../../interfaces/previewPost';
-import VideoCard from '../VideoCard';
+import PostBannerPreview from '../PostBannerPreview';
 
 import {
   Container,
@@ -38,7 +38,7 @@ const PostCardAdmin: React.FC<PreviewPost> = ({
         </Info>
       </div>
 
-      <VideoCard
+      <PostBannerPreview
         videoTitle={title}
         videoURL={videoUrl as string}
       />

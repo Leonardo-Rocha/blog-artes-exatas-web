@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FiTag } from 'react-icons/fi';
 
 import PreviewPost from '../../interfaces/previewPost';
-import VideoCard from '../VideoCard';
+import PostBannerPreview from '../PostBannerPreview';
 
 import {
   Container,
@@ -36,7 +36,7 @@ const PostCard: React.FC<PreviewPost> = ({
         </Info>
       </div>
 
-      <VideoCard
+      <PostBannerPreview
         videoTitle={title}
         videoURL={videoUrl as string}
       />

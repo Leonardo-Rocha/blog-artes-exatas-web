@@ -56,6 +56,11 @@ const List = styled.ul`
     display: inline;
   }
 
+  div {
+    display: inline-flex;
+    justify-content: space-between;
+  }
+
   @media(min-width: 768px) {
     margin: 1rem 0 .5rem;
   }

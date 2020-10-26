@@ -2,6 +2,7 @@ import React from 'react';
 import { FiSearch } from 'react-icons/fi';
 
 import { NavLink } from 'react-router-dom';
+import Input from '../../../Input';
 
 import { Container, List } from './styles';
 
@@ -26,8 +27,10 @@ const Header: React.FC = () => (
         </li>
 
         <li>
-          <input type="text" placeholder="inputo da cara" id="searchBar" />
-          <FiSearch size="1.6rem" color="inherit" id="searchIcon" />
+          <Input type="text" placeholder="Pesquisar" id="searchBar" />
+          <button type="button">
+            <FiSearch size="1.6rem" color="inherit" id="searchIcon" />
+          </button>
         </li>
       </List>
     </nav>
