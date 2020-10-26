@@ -2,10 +2,11 @@ interface Post {
   title: string;
   preview: string;
   content: string;
-  date: string;
+  createdAt: string;
+  updatedAt: string;
   readingTimeInMinutes: number;
   tags: string[];
-  url: string;
+  videoUrl: string;
 }
 
 export default Post;
