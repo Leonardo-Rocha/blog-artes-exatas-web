@@ -1,8 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { FiTag, FiEdit, FiTrash } from 'react-icons/fi';
 import Button from 'react-bootstrap/Button';
 
+import PreviewPost from '../../interfaces/previewPost';
 import VideoCard from '../VideoCard';
+
 import {
   Container,
   Preview,
@@ -11,36 +14,34 @@ import {
   AdminButtons,
 } from './styles';
 
-interface Props {
-  title: string;
-  preview: string;
-  date: string;
-  readingTimeInMinutes: number;
-  tags: string[];
-  url: string;
-}
-
-const PostCardAdmin: React.FC<Props> = ({
-  title, preview, date, readingTimeInMinutes, tags, url,
+const PostCardAdmin: React.FC<PreviewPost> = ({
+  id, title, preview, createdAt, readingTimeInMinutes, tags, videoUrl,
 }) => (
   <Container>
-    <div>
-      <Title>{title}</Title>
+    <NavLink to={`/posts/${id}`} id="cardLink">
+      <div>
+        <Title>{title}</Title>
 
-      <Preview>{preview}</Preview>
+        <Preview>{preview}</Preview>
 
-      <Info>
-        {date}
-        {' '}
-        - Leitura de
-        {' '}
-        {readingTimeInMinutes}
-        min |
-        {' '}
-        <FiTag />
-        {' '}
-        {tags.map((tag) => `${tag} `)}
-      </Info>
+        <Info>
+          {createdAt}
+          {' '}
+          - Leitura de
+          {' '}
+          {readingTimeInMinutes}
+          min |
+          {' '}
+          <FiTag />
+          {' '}
+          {tags.map((tag) => `${tag} `)}
+        </Info>
+      </div>
+
+      <VideoCard
+        videoTitle={title}
+        videoURL={videoUrl as string}
+      />
 
       <AdminButtons>
         <Button>
@@ -53,12 +54,7 @@ const PostCardAdmin: React.FC<Props> = ({
           Excluir
         </Button>
       </AdminButtons>
-    </div>
-
-    <VideoCard
-      videoTitle={title}
-      videoURL={url}
-    />
+    </NavLink>
   </Container>
 );
 

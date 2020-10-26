@@ -7,7 +7,8 @@ interface Post {
   updatedAt: string;
   readingTimeInMinutes: number;
   tags: string[];
-  videoUrl: string;
+  videoUrl?: string;
+  imageUrl?: string;
 }
 
 export default Post;

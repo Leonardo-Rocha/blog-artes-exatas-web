@@ -7,22 +7,22 @@ import { Container, List } from './styles';
 
 const Header: React.FC = () => (
   <Container>
-    <NavLink to="/">
+    <NavLink to="/home">
       <h1>Artes Exatas</h1>
     </NavLink>
 
     <nav>
       <List>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/home" activeClassName="selected">Home</NavLink>
         </li>
 
         <li>
-          <NavLink to="/about">Sobre</NavLink>
+          <NavLink to="/about" activeClassName="selected">Sobre</NavLink>
         </li>
 
         <li>
-          <NavLink to="/contact">Contato</NavLink>
+          <NavLink to="/contact" activeClassName="selected">Contato</NavLink>
         </li>
 
         <li>

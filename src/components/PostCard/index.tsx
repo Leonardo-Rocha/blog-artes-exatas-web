@@ -38,7 +38,7 @@ const PostCard: React.FC<PreviewPost> = ({
 
       <VideoCard
         videoTitle={title}
-        videoURL={videoUrl}
+        videoURL={videoUrl as string}
       />
     </NavLink>
   </Container>

@@ -12,4 +12,15 @@ const Info = styled.span`
   margin-bottom: 20px;
 `;
 
-export { Info };
+const Banner = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  img {
+    width: 100%;
+
+  }
+`;
+
+export { Info, Banner };

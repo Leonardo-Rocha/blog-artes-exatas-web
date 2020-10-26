@@ -26,7 +26,6 @@ export const Container = styled.div`
     }
 
     div {
-      margin-right: 1rem;
       max-height: 22rem;
       max-width: 31rem;
     }

@@ -14,6 +14,19 @@ const Container = styled.header`
     display: none;
   }
 
+  .selected {
+    font-weight: bold;
+  }
+
+  .selected::after {
+    border-bottom: 0.1rem solid #2bbc8a;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 0.5rem;
+  }
+
   a {
     text-decoration: none;
     color: inherit;

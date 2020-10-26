@@ -1,29 +1,24 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 interface VideoCardContainerProps {
   url: string;
-  cardSize: 'preview' | 'banner';
 }
 
-export const VideoCardContainer = styled.a<VideoCardContainerProps>`
+export const VideoCardContainer = styled.div<VideoCardContainerProps>`
   border: 0.1rem solid;
   border-radius: 4px;
   text-decoration: none;
-
-  ${(props) => (props.cardSize === 'preview'
-    ? css`
-      width: 50%;
-      height: 18rem;
-    `
-    : css`
-      width: 100%;
-      height: 37.5;
-    `)}
+  width: 50%;
+  height: 18rem;
+  display: none;
   background-image: ${({ url }) => `url(${url})`};
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-  display: flex;
   align-items: flex-end;
   padding: 1rem;
+
+  @media(min-width: 768px) {
+    display: flex;
+  }
 `;
