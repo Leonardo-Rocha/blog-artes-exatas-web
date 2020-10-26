@@ -4,13 +4,17 @@ import { lighten } from 'polished';
 export const Container = styled.div`
   display: flex;
 
+  & + div {
+    margin-top: 1rem;
+  }
+
   #cardLink {
     text-decoration: none;
 
     background: ${lighten(0.05, '#343a40')};
-    border-radius: 5px;
+    border-radius: 0.3rem;
     width: 100%;
-    padding: 24px;
+    padding: 1.5rem;
     display: block;
     text-decoration: none;
     display: flex;
@@ -18,13 +22,13 @@ export const Container = styled.div`
     transition: transform 0.2s;
 
     &:hover {
-      transform: translateX(10px);
+      transform: translateX(0.6rem);
     }
 
     div {
-      margin-right: 16px;
-      max-height: 350px;
-      max-width: 500px;
+      margin-right: 1rem;
+      max-height: 22rem;
+      max-width: 31rem;
     }
   }
 `;
@@ -34,9 +38,9 @@ const Title = styled.h3`
 `;
 
 const Preview = styled.p`
-  font-size: 18px;
+  font-size: 1.2rem;
   color: #a8a8b3;
-  margin-top: 4px;
+  margin-top: 0.2rem;
 
   overflow: hidden;
   text-overflow: ellipsis;

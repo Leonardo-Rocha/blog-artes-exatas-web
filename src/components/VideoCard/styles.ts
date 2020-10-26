@@ -6,18 +6,18 @@ interface VideoCardContainerProps {
 }
 
 export const VideoCardContainer = styled.a<VideoCardContainerProps>`
-  border: 2px solid;
+  border: 0.1rem solid;
   border-radius: 4px;
   text-decoration: none;
 
   ${(props) => (props.cardSize === 'preview'
     ? css`
       width: 50%;
-      height: 290px;
+      height: 18rem;
     `
     : css`
       width: 100%;
-      height: 600px;
+      height: 37.5;
     `)}
   background-image: ${({ url }) => `url(${url})`};
   background-size: cover;
@@ -25,5 +25,5 @@ export const VideoCardContainer = styled.a<VideoCardContainerProps>`
   border-radius: 10px;
   display: flex;
   align-items: flex-end;
-  padding: 16px;
+  padding: 1rem;
 `;

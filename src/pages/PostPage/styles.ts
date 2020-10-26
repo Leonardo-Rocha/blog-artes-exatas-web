@@ -1,15 +1,5 @@
 import styled from 'styled-components';
 
-const Content = styled.main`
-  width: 100%;
-
-  padding: 4rem 1rem;
-
-  & > h1 {
-    margin-top: 30px;
-  }
-`;
-
 const Info = styled.span`
   color: #a8a8b3;
   overflow: hidden;
@@ -22,4 +12,4 @@ const Info = styled.span`
   margin-bottom: 20px;
 `;
 
-export { Content, Info };
+export { Info };

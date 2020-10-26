@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
-const Content = styled.main`
-  width: 100%;
-
-  padding: 4rem 1rem;
-
+const FormContainer = styled.main`
   form {
     margin-top: 30px;
     .row {
@@ -25,4 +21,4 @@ const Content = styled.main`
   }
 `;
 
-export { Content };
+export { FormContainer };

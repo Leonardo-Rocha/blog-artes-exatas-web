@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 
 const Container = styled.header`
-  height: 10vh;
+  height: 15vh;
+  width: 100%;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+
+  flex-wrap: wrap;
+
+  #searchBar {
+    display: none;
+  }
 
   a {
     text-decoration: none;
@@ -14,42 +21,34 @@ const Container = styled.header`
     &:focus, &:hover, &:visited, &:link, &:active {
       text-decoration: none;
     }
+
+    display: inline-block;
+    padding: .5rem 1.5rem;
   }
 
-  @media(max-width: 800px) {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "title title title title"
-    "home about contact searchIcon";
-
-    background-color: blue;
-
-    height: 100%;
-
-    #title {
-      grid-area: title;
+  @media(min-width: 768px) {
+    justify-content: space-between;
+    padding: 0 12rem;
+    #searchBar {
+      display: inline-block;
     }
-
-    .home {
-      grid-area: home;
-    }
-
-    .about {
-      grid-area: about;
-    }
-
-    .searchIcon {
-      grid-area: searchIcon;
-      display: none;
-    }
-
-    .searchBar {
-      display: none;
-    }
-
   }
-
 `;
 
-export default Container;
+const List = styled.ul`
+  margin: 0 0 .5rem;
+  text-align: center;
+
+  li {
+    display: inline;
+  }
+
+  @media(min-width: 768px) {
+    margin: 1rem 0 .5rem;
+  }
+`;
+
+export {
+  Container,
+  List,
+};

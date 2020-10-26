@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
 import { FiTag } from 'react-icons/fi';
 import parse from 'html-react-parser';
 
-import Header from '../../components/Header';
 import VideoCard from '../../components/VideoCard';
 import loadFullPost from '../../services/loadFullPost';
 import FullPost from '../../interfaces/fullPost';
 
-import { Content, Info } from './styles';
+import { Info } from './styles';
+import PageTemplate from '../../components/PageTemplate';
 
 interface Params {
   id: string;
@@ -17,6 +16,7 @@ interface Params {
 
 const PostPage: React.FC = () => {
   const [post, setPost] = useState<FullPost>({
+    id: 0,
     title: '',
     content: '',
     createdAt: '',
@@ -39,37 +39,34 @@ const PostPage: React.FC = () => {
   }, [id]);
 
   return (
-    <Container>
-      <Header />
-      <Content>
-        {errorMessage.length > 0 && (
-          <p>errorMessage</p>
-        )}
+    <PageTemplate>
+      {errorMessage.length > 0 && (
+        <p>errorMessage</p>
+      )}
 
-        <VideoCard
-          videoTitle={post.title}
-          videoURL={post.videoUrl}
-          cardSize="banner"
-        />
+      <VideoCard
+        videoTitle={post.title}
+        videoURL={post.videoUrl}
+        cardSize="banner"
+      />
 
-        <h1>{post.title}</h1>
+      <h1>{post.title}</h1>
 
-        <Info>
-          {post.createdAt}
-          {' '}
-          - Leitura de
-          {' '}
-          {post.readingTimeInMinutes}
-          min |
-          {' '}
-          <FiTag />
-          {' '}
-          {post.tags.map((tag) => `${tag} `)}
-        </Info>
+      <Info>
+        {post.createdAt}
+        {' '}
+        - Leitura de
+        {' '}
+        {post.readingTimeInMinutes}
+        min |
+        {' '}
+        <FiTag />
+        {' '}
+        {post.tags.map((tag) => `${tag} `)}
+      </Info>
 
-        {parse(post.content)}
-      </Content>
-    </Container>
+      {parse(post.content)}
+    </PageTemplate>
   );
 };
 

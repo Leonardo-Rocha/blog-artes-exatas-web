@@ -1,14 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 
 import { useHistory } from 'react-router-dom';
-import Header from '../../components/Header';
-import { Content } from './styles';
-import loadFullPost from '../../services/loadFullPost';
+import { FormContainer } from './styles';
+import PageTemplate from '../../components/PageTemplate';
 
 interface Props {
   id?: number;
@@ -22,10 +20,6 @@ const CreatePost: React.FC<Props> = ({ id }) => {
   const [content, setContent] = useState('');
   const history = useHistory();
 
-  // useEffect(() => {
-  //   loadFullPost();
-  // }, [id]);
-
   const handleSubmit = useCallback((event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(title, readingTimeInMinutes, tags);
@@ -34,10 +28,8 @@ const CreatePost: React.FC<Props> = ({ id }) => {
   }, [title, readingTimeInMinutes, tags, content, history]);
 
   return (
-    <Container>
-      <Header />
-
-      <Content>
+    <PageTemplate>
+      <FormContainer>
         <h1>Criar um novo post</h1>
 
         <Form onSubmit={handleSubmit}>
@@ -79,7 +71,7 @@ const CreatePost: React.FC<Props> = ({ id }) => {
             </Col>
             <Col>
               <Form.Group controlId="link">
-                <Form.Label>Tags</Form.Label>
+                <Form.Label>URL do Video</Form.Label>
                 <Form.Control
                   type="link"
                   value={link}
@@ -115,8 +107,8 @@ const CreatePost: React.FC<Props> = ({ id }) => {
             Submit
           </Button>
         </Form>
-      </Content>
-    </Container>
+      </FormContainer>
+    </PageTemplate>
   );
 };
 

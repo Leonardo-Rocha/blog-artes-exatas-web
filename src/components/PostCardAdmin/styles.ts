@@ -28,9 +28,9 @@ const Title = styled.h3`
 `;
 
 const Preview = styled.p`
-  font-size: 18px;
+  font-size: 1.1rem;
   color: #a8a8b3;
-  margin-top: 4px;
+  margin-top: 0.2rem;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -47,17 +47,17 @@ const Info = styled.span`
 `;
 
 const AdminButtons = styled.div`
-  padding-top: 20px;
+  padding-top: 1.2rem;
 
   display: flex;
   width: 100%;
 
   align-items: center;
   justify-content: left;
-  margin-left: 0px;
+  margin-left: 0;
 
   button {
-    margin-right: 5px;
+    margin-right: 0.2rem;
     width: 48%;
   }
 `;
