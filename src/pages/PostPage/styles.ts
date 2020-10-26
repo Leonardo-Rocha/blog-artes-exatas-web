@@ -1,14 +1,25 @@
 import styled from 'styled-components';
 
 const Content = styled.main`
-  flex: 1;
   width: 100%;
 
   padding: 4rem 1rem;
 
-  div + div {
-    margin-top: 32px;
+  & > h1 {
+    margin-top: 30px;
   }
 `;
 
-export { Content };
+const Info = styled.span`
+  color: #a8a8b3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  margin-bottom: 20px;
+`;
+
+export { Content, Info };

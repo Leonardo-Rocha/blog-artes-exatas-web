@@ -6,7 +6,7 @@ import parse from 'html-react-parser';
 import Header from '../../components/Header';
 import VideoCard from '../../components/VideoCard';
 
-import { Content } from './styles';
+import { Content, Info } from './styles';
 
 const PostPage: React.FC = () => {
   const [title, setTitle] = useState('');
@@ -35,11 +35,12 @@ const PostPage: React.FC = () => {
         <VideoCard
           videoTitle={title}
           videoURL={url}
+          cardSize="banner"
         />
 
         <h1>{title}</h1>
 
-        <span>
+        <Info>
           {date}
           {' '}
           - Leitura de
@@ -50,7 +51,7 @@ const PostPage: React.FC = () => {
           <FiTag />
           {' '}
           {tags.map((tag) => `${tag} `)}
-        </span>
+        </Info>
 
         {parse(content)}
       </Content>
