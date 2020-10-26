@@ -4,7 +4,7 @@ import PageTemplate from '../../components/PageTemplate';
 
 const AboutPage: React.FC = () => (
   <PageTemplate>
-    TODO: Fill about info.
+    Em construção.
   </PageTemplate>
 );
 
