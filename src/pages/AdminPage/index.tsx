@@ -1,10 +1,10 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 
 import PostCardAdmin from '../../components/PostCardAdmin';
+import Button from '../../components/Button';
+import PageTemplate from '../../components/PageTemplate';
 
 import { NewPostDiv } from './styles';
-import PageTemplate from '../../components/PageTemplate';
 
 const AdminPage: React.FC = () => (
   <PageTemplate>

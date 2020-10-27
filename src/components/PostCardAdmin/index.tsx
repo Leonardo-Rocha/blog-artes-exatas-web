@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FiTag, FiEdit, FiTrash } from 'react-icons/fi';
-import Button from 'react-bootstrap/Button';
 
 import PreviewPost from '../../interfaces/previewPost';
 import PostBannerPreview from '../PostBannerPreview';
+import Button from '../Button';
 
 import {
   Container,
