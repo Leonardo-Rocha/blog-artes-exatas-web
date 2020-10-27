@@ -22,7 +22,7 @@ const AdminPage: React.FC = () => (
       updatedAt="24/10/2020"
       readingTimeInMinutes={7}
       tags={['#Tutorial', '#Computadores']}
-      videoUrl="https://www.youtube.com/watch?v=OaPt-19C2No"
+      url="https://www.youtube.com/watch?v=OaPt-19C2No"
     />
   </PageTemplate>
 );

@@ -1,27 +1,19 @@
-import React, { useCallback } from 'react';
+import React from 'react';
+
+import getImageFromUrl from '../../utils/getImageFromUrl';
 
 import { PostBannerPreviewContainer } from './styles';
 
 interface Props {
-  videoTitle: string;
-  videoURL: string;
+  title: string;
+  url: string;
 }
 
-const PostBannerPreview: React.FC<Props> = ({ videoTitle, videoURL }) => {
-  const getYoutubeId = useCallback((youtubeURL: string) => youtubeURL
-    .replace(
-      /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
-      '$7',
-    ), []);
-
-  const image = `https://img.youtube.com/vi/${getYoutubeId(videoURL)}/hqdefault.jpg`;
-
-  return (
-    <PostBannerPreviewContainer
-      url={image}
-      title={videoTitle}
-    />
-  );
-};
+const PostBannerPreview: React.FC<Props> = ({ title, url }) => (
+  <PostBannerPreviewContainer
+    url={getImageFromUrl(url)}
+    title={title}
+  />
+);
 
 export default PostBannerPreview;

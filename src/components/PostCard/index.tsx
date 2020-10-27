@@ -13,7 +13,7 @@ import {
 } from './styles';
 
 const PostCard: React.FC<PreviewPost> = ({
-  id, title, preview, createdAt, readingTimeInMinutes, tags, videoUrl,
+  id, title, preview, createdAt, readingTimeInMinutes, tags, url,
 }) => (
   <Container>
     <NavLink to={`/posts/${id}`} id="cardLink">
@@ -37,8 +37,8 @@ const PostCard: React.FC<PreviewPost> = ({
       </div>
 
       <PostBannerPreview
-        videoTitle={title}
-        videoURL={videoUrl as string}
+        title={title}
+        url={url as string}
       />
     </NavLink>
   </Container>

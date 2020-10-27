@@ -34,7 +34,6 @@ const ContactPage: React.FC = () => {
         <Input
           type="text"
           placeholder="E-mail"
-          hint="mail@mail.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />

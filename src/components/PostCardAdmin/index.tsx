@@ -15,7 +15,7 @@ import {
 } from './styles';
 
 const PostCardAdmin: React.FC<PreviewPost> = ({
-  id, title, preview, createdAt, readingTimeInMinutes, tags, videoUrl,
+  id, title, preview, createdAt, readingTimeInMinutes, tags, url,
 }) => (
   <Container>
     <NavLink to={`/posts/${id}`} id="cardLink">
@@ -39,8 +39,8 @@ const PostCardAdmin: React.FC<PreviewPost> = ({
       </div>
 
       <PostBannerPreview
-        videoTitle={title}
-        videoURL={videoUrl as string}
+        title={title}
+        url={url as string}
       />
 
       <AdminButtons>

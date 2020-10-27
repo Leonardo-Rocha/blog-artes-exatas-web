@@ -19,7 +19,7 @@ const LandingPage: React.FC = () => {
         updatedAt="24/10/2020"
         readingTimeInMinutes={7}
         tags={['#Tutorial', '#Computadores', '#tralha', '#POnceta']}
-        videoUrl="https://www.youtube.com/watch?v=OaPt-19C2No"
+        url="https://www.youtube.com/watch?v=OaPt-19C2No"
       />
 
       <PostCard
@@ -31,19 +31,18 @@ const LandingPage: React.FC = () => {
         updatedAt="25/10/2020"
         readingTimeInMinutes={2}
         tags={['#Humor', '#PiadasZap']}
-        videoUrl="https://www.youtube.com/watch?v=WIpP5fvg9Jw"
+        url="https://www.youtube.com/watch?v=WIpP5fvg9Jw"
       />
 
       <PostCard
         id={2}
-        title="ONDE O CARECA TERMINA DE LAVAR O ROSTO?"
-        preview="Muitas pessoas tem essa dúvida, porque geralmente se para de lavar
-          quando chega no cabelo. Como proceder quando não há cabelo?"
+        title="NHK Ni Youkoso - Uma resenha do hikikomorismo"
+        preview="Protagonista fracassado do caralho..."
         createdAt="25/10/2020"
         updatedAt="25/10/2020"
         readingTimeInMinutes={2}
         tags={['#Humor', '#PiadasZap']}
-        videoUrl="https://www.youtube.com/watch?v=WIpP5fvg9Jw"
+        url="http://static.zerochan.net/NHK.ni.Youkoso!.full.812105.jpg"
       />
     </PageTemplate>
   );

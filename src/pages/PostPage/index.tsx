@@ -9,6 +9,7 @@ import FullPost from '../../interfaces/fullPost';
 
 import { Info, Banner } from './styles';
 import PageTemplate from '../../components/PageTemplate';
+import isImageUrl from '../../utils/isImageUrl';
 
 interface Params {
   id: string;
@@ -26,8 +27,8 @@ const PostPage: React.FC = () => {
     updatedAt: '24/10/2020',
     readingTimeInMinutes: 0,
     tags: ['Tutorial', 'Computadores'],
-    videoUrl: 'https://www.youtube.com/watch?v=DGQA4gxjLr8',
-    // imageUrl: 'http://static.zerochan.net/NHK.ni.Youkoso!.full.812105.jpg',
+    url: 'https://www.youtube.com/watch?v=DGQA4gxjLr8',
+    // url: 'http://static.zerochan.net/NHK.ni.Youkoso!.full.812105.jpg',
   });
   const [errorMessage, setErrorMessage] = useState('');
   const { id } = useParams<Params>();
@@ -49,16 +50,16 @@ const PostPage: React.FC = () => {
       )}
 
       <Banner>
-        {post.videoUrl
+        {isImageUrl(post.url as string)
           ? (
+            <img src={post.url as string} alt="cover" />
+          )
+          : (
             <ReactPlayer
-              url={post.videoUrl}
+              url={post.url}
               width="100%"
             />
-          )
-          : (post.imageUrl && (
-            <img src={post.imageUrl as string} alt="cover" />
-          ))}
+          )}
       </Banner>
 
       <h1>{post.title}</h1>
